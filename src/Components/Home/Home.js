@@ -1,4 +1,5 @@
 import React from "react";
+import FoodCard from "./FoodCard";
 
 const Home = () => {
   return (
@@ -10,7 +11,11 @@ const Home = () => {
           src="https://i.ibb.co/VvL0QPY/Yummi.png"
           alt=""
         />
-        <h1 className="text-4xl font-bold font-serif p-4 text-center">Home Cooked Food Is Healthier Than Fast Food Or Takeout</h1>
+        <h1 className="lg:text-4xl text-2xl font-bold font-serif p-4 text-center">Home Cooked Food Is Healthier Than Fast Food Or Takeout</h1>
+      </div>
+      {/* food section  */}
+      <div>
+        <FoodCard/>
       </div>
     </div>
   );
