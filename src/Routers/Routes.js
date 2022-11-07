@@ -8,6 +8,8 @@ import Home from "../Components/Home/Home";
 import Main from "../Layout/Main";
 import Blog from "../Components/Blog/Blog";
 import PrivetRoutes from "./PrivetRoutes";
+import MyReview from "../Components/MyReview/MyReview";
+import PriveteRoutes from "./PrivetRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +36,14 @@ export const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+      },
+      {
+        path: "myReviews",
+        element: (
+          <PriveteRoutes>
+            <MyReview />
+          </PriveteRoutes>
+        ),
       },
       {
         path: "foodservice/:id",
