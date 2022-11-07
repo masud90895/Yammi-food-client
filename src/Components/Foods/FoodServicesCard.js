@@ -10,7 +10,7 @@ const FoodServicesCard = ({ food }) => {
       <div className=" relative group">
         <PhotoProvider>
           <PhotoView src={image}>
-            <img className=" w-full h-[350px]" src={image} alt="" />
+            <img className=" w-full rounded-xl h-[350px]" src={image} alt="" />
           </PhotoView>
         </PhotoProvider>
       </div>
