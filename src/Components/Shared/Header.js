@@ -90,6 +90,12 @@ const Header = () => {
           >
             Foods
           </Link>
+          <Link
+            className="text-gray-900 hover:border-b-2 hover:border-yellow-500"
+            to="blog"
+          >
+            Blog
+          </Link>
           {(user?.email || user?.uid) && (
             <>
               <Link
@@ -138,6 +144,9 @@ const Header = () => {
           </Link>
           <Link className="flex-shrink-0 pl-4 text-gray-900" to="foodservice">
             Food
+          </Link>
+          <Link className="flex-shrink-0 pl-4 text-gray-900" to="blog">
+            Blog
           </Link>
           {(user?.email || user?.uid) && (
             <>
