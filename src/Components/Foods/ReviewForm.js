@@ -1,13 +1,51 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../Firebase/AuthProvider";
+import toast from "react-hot-toast";
 
-const ReviewForm = () => {
+const ReviewForm = ({ foodData, reload, setReload }) => {
+  const { user } = useContext(AuthContext);
+  const [login, setlogin] = useState("");
+
+  const handleReview = (e) => {
+    e.preventDefault();
+    const review = {
+      category: foodData?.data?.name,
+      userName: user?.displayName,
+      email: user?.email,
+      image: user?.photoURL,
+      review: e.target.review.value,
+    };
+    if (!user?.email || !user?.uid) {
+      return setlogin("Please login to add a review");
+    }
+
+    fetch("http://localhost:5000/review", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        setReload(!reload);
+        toast.success("Review added");
+        setlogin("");
+        e.target.reset();
+      });
+  };
+
   return (
     <div className="lg:w-3/4 mx-auto">
       <div className="px-2 py-12 ">
         <div className="flex flex-no-wrap items-start">
           <div className="w-full ">
             <div className="py-4 px-2">
-              <form className="bg-white rounded shadow py-7">
+              <form
+                onSubmit={handleReview}
+                className="bg-white rounded shadow py-7"
+              >
                 {/* end */}
                 <div className=" px-7">
                   <p className="text-xl font-semibold leading-tight text-gray-800">
@@ -128,6 +166,7 @@ const ReviewForm = () => {
                       </div>
                     </div>
                     <textarea
+                      name="review"
                       className="resize-none w-full h-[170px] px-4 py-4 text-base outline-none text-slate-600"
                       placeholder="Start typing here ..."
                       defaultValue={" "}
@@ -137,6 +176,7 @@ const ReviewForm = () => {
                 <p className="mt-3 text-xs leading-[15px] text-gray-600 px-7">
                   Enter Your Food Experience for better understanding
                 </p>
+                <p className="text-2xl font-bold text-red-600 text-center">{login}</p>
                 <hr className="h-[1px] bg-gray-100 my-14" />
                 <div className="flex flex-col flex-wrap items-center justify-center w-full px-7 lg:flex-row lg:justify-end md:justify-end gap-x-4 gap-y-4">
                   <button className="border-2 border-yellow-500 rounded hover:bg-yellow-500 transform duration-300 ease-in-out text-sm font-medium px-6 py-4 text-black lg:max-w-[144px] w-full ">
