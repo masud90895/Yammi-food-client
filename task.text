@@ -3,13 +3,9 @@
 Main Requirements
 1=> add a meaningful footer.
 
-2=> When clicking the button/icon, take the user to the /services route and show all the services on that page.
+3.Add two extra sections on the home page. Make sure it is unique and relevant to your website.
 
-Add two extra sections on the home page. Make sure it is unique and relevant to your website.
-
-The services of the home page and the services of the services page will have the name of the service, image, rating(optional), price, a short description(maximum 100 characters), and a view details button with each service card.
-
-When clicking on the image of the service, the picture will be viewed on full screen. Explore the package react-photo-view for that.
+5.When clicking on the image of the service, the picture will be viewed on full screen. Explore the package react-photo-view for that.
 
 On clicking the view details button, the user will be taken to the service details page: /services/:id route
 

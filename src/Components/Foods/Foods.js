@@ -13,7 +13,6 @@ const Foods = () => {
             }
           });
       }, []);
-      console.log(foods);
 
   return (
     <div className=" 2xl:container 2xl:mx-auto ">

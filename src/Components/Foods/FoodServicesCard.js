@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FoodServicesCard = ({food}) => {
     const { _id, name, image, ratings, price, detailers } = food;
@@ -27,9 +28,11 @@ const FoodServicesCard = ({food}) => {
         }
       </p>
 
+      <Link to={`../foodservice/${_id}`}>
       <button className=" bg-transparent font-medium text-base leading-4 border-2 border-yellow-500 py-3 w-full mt-2 text-black rounded-md hover:bg-yellow-500">
              View Details
           </button>
+      </Link>
 
     </div>
   );
