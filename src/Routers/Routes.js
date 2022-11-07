@@ -6,6 +6,7 @@ import FoodDetailes from "../Components/Foods/FoodDetailes";
 import Foods from "../Components/Foods/Foods";
 import Home from "../Components/Home/Home";
 import Main from "../Layout/Main";
+import PrivetRoutes from "./PrivetRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "foodservice/:id",
-        element: <FoodDetailes />,
+        element: (
+          <PrivetRoutes>
+            <FoodDetailes />
+          </PrivetRoutes>
+        ),
         loader: ({ params }) => {
           return fetch(`http://localhost:5000/foods/${params.id}`);
         },
