@@ -1,13 +1,16 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import FoodReview from './FoodReview';
 import FoodServiceDetailes from './FoodServiceDetailes';
+import ReviewForm from './ReviewForm';
 
 const FoodDetailes = () => {
     const foodData= useLoaderData()
-    const { _id, name, image, ratings, price, detailers } = foodData.data;
     return (
         <div>
             <FoodServiceDetailes foodData={foodData}/>
+            <FoodReview/>
+            <ReviewForm/>
         </div>
     );
 };
