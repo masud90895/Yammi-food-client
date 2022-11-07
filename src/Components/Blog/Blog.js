@@ -16,28 +16,28 @@ const Blog = () => {
         <img
           src="https://i.ibb.co/DQ4FZhL/pattern-bg.png"
           alt="blue pattern background"
-          class="absolute w-full h-64 md:h-96 object-center object-fit z-0"
+           className="absolute w-full h-64 md:h-96 object-center object-fit z-0"
         />
-        <div class="relative flex flex-col items-center justify-center sm:px-0 px-6 z-20 pb-32">
-          <div class="md:py-36 py-20">
+        <div  className="relative flex flex-col items-center justify-center sm:px-0 px-6 z-20 pb-32">
+          <div  className="md:py-36 py-20">
             <h1
               role="heading"
-              class="xl:text-6xl md:text-5xl text-xl font-bold leading-10 text-white"
+               className="xl:text-6xl md:text-5xl text-xl font-bold leading-10 text-white"
             >
               Frequently asked questions
             </h1>
           </div>
-          <div class="lg:w-1/2 md:w-8/12 sm:w-9/12 w-full">
-            <div class="bg-white shadow rounded p-8">
-              <div class="flex items-center justify-between">
+          <div  className="lg:w-1/2 md:w-8/12 sm:w-9/12 w-full">
+            <div  className="bg-white shadow rounded p-8">
+              <div  className="flex items-center justify-between">
                 <div>
-                  <h2 class="text-base font-semibold leading-none text-gray-800">
-                  Difference between SQL and NoSQL?
+                  <h2  className="text-base font-semibold leading-none text-gray-800">
+                    Difference between SQL and NoSQL?
                   </h2>
                 </div>
                 <button
                   onClick={() => setBox1(!box1)}
-                  class="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
+                   className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
                 >
                   {box1 ? (
                     <svg
@@ -52,9 +52,9 @@ const Blog = () => {
                       <path
                         d="M1 5L5 1L9 5"
                         stroke="#4B5563"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                         strokeWidth="1.5"
+                         strokeLinecap="round"
+                         strokeLinejoin="round"
                       />
                     </svg>
                   ) : (
@@ -70,9 +70,9 @@ const Blog = () => {
                       <path
                         d="M1 1L5 5L9 1"
                         stroke="#4B5563"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                         strokeWidth="1.5"
+                         strokeLinecap="round"
+                         strokeLinejoin="round"
                       />
                     </svg>
                   )}
@@ -80,20 +80,24 @@ const Blog = () => {
               </div>
 
               {box1 && (
-                <ul class="">
+                <ul  className="">
                   <li>
-                    <p class="text-base leading-normal text-gray-600 mt-4 lg:w-96">
-                    SQL is the programming language used to interface with relational databases. (Relational databases model data as records in rows and tables with logical links between them). NoSQL is a class of DBMs that are non-relational and generally do not use SQL.
+                    <p  className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
+                      SQL is the programming language used to interface with
+                      relational databases. (Relational databases model data as
+                      records in rows and tables with logical links between
+                      them). NoSQL is a class of DBMs that are non-relational
+                      and generally do not use SQL.
                     </p>
                   </li>
                 </ul>
               )}
             </div>
-            <div class="bg-white shadow rounded p-8 mt-8">
-              <div class="flex items-center justify-between">
+            <div  className="bg-white shadow rounded p-8 mt-8">
+              <div  className="flex items-center justify-between">
                 <div>
-                  <h2 class="text-base font-semibold leading-none text-gray-800">
-                    What payment method I can use?
+                  <h2  className="text-base font-semibold leading-none text-gray-800">
+                    What is JWT, and how does it work?
                   </h2>
                 </div>
                 <button
@@ -101,7 +105,7 @@ const Blog = () => {
                     setBox2(!box2);
                   }}
                   data-menu
-                  class="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
+                   className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
                 >
                   {box2 ? (
                     <svg
@@ -116,9 +120,9 @@ const Blog = () => {
                       <path
                         d="M1 5L5 1L9 5"
                         stroke="#4B5563"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                         strokeWidth="1.5"
+                         strokeLinecap="round"
+                         strokeLinejoin="round"
                       />
                     </svg>
                   ) : (
@@ -134,9 +138,9 @@ const Blog = () => {
                       <path
                         d="M1 1L5 5L9 1"
                         stroke="#4B5563"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                         strokeWidth="1.5"
+                         strokeLinecap="round"
+                         strokeLinejoin="round"
                       />
                     </svg>
                   )}
@@ -145,20 +149,28 @@ const Blog = () => {
               {box2 && (
                 <ul>
                   <li>
-                    <p class="text-base leading-normal text-gray-600 mt-4 lg:w-96">
-                      If you want to choose Pro or Business plan the you can use
-                      all payments. You can pay from Paypal, Payoneer, Master
-                      Card, Debit Card.
+                    <p  className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
+                      JSON Web Token (JWT) is an open standard (RFC 7519) that
+                      defines a compact and self-contained way for securely
+                      transmitting information between parties as a JSON object.
+                      This information can be verified and trusted because it is
+                      digitally signed. <br />
+                      JWTs are digitally signed using either a secret (HMAC) or
+                      a public/private key pair (RSA or ECDSA) which safeguards
+                      them from being modified by the client or an attacker.
+                      Stored only on the client: You generate JWTs on the server
+                      and send them to the client. The client then submits the
+                      JWT with every request.
                     </p>
                   </li>
                 </ul>
               )}
             </div>
-            <div class="bg-white shadow rounded p-8 mt-8">
-              <div class="flex items-center justify-between">
+            <div  className="bg-white shadow rounded p-8 mt-8">
+              <div  className="flex items-center justify-between">
                 <div>
-                  <h2 class="text-base font-semibold leading-none text-gray-800">
-                    Is your service safe to use?
+                  <h2  className="text-base font-semibold leading-none text-gray-800">
+                    What is the difference between javascript and NodeJS?
                   </h2>
                 </div>
                 <button
@@ -166,7 +178,7 @@ const Blog = () => {
                     setBox3(!box3);
                   }}
                   data-menu
-                  class="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
+                   className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
                 >
                   {box3 ? (
                     <svg
@@ -181,9 +193,9 @@ const Blog = () => {
                       <path
                         d="M1 5L5 1L9 5"
                         stroke="#4B5563"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                         strokeWidth="1.5"
+                         strokeLinecap="round"
+                         strokeLinejoin="round"
                       />
                     </svg>
                   ) : (
@@ -199,9 +211,9 @@ const Blog = () => {
                       <path
                         d="M1 1L5 5L9 1"
                         stroke="#4B5563"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                         strokeWidth="1.5"
+                         strokeLinecap="round"
+                         strokeLinejoin="round"
                       />
                     </svg>
                   )}
@@ -210,26 +222,31 @@ const Blog = () => {
               {box3 && (
                 <ul>
                   <li>
-                    <p class="text-base leading-normal text-gray-600 mt-4 lg:w-96">
-                      If you want to choose Pro or Business plan the you can use
-                      all payments. You can pay from Paypal, Payoneer, Master
-                      Card, Debit Card.
+                    <p  className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
+                      JavaScript is a simple programming language that can be
+                      used with any browser that has the JavaScript Engine
+                      installed. Node. js, on the other hand, is an interpreter
+                      or execution environment for the JavaScript programming
+                      language. <br />
+                      Javascript is a programming language that is used for
+                      writing scripts on the website. NodeJS is a Javascript
+                      runtime environment
                     </p>
                   </li>
                 </ul>
               )}
             </div>
-            <div class="bg-white shadow rounded p-8 mt-8">
-              <div class="flex items-center justify-between">
+            <div  className="bg-white shadow rounded p-8 mt-8">
+              <div  className="flex items-center justify-between">
                 <div>
-                  <h2 class="text-base font-semibold leading-none text-gray-800">
-                    How to recover password?
+                  <h2  className="text-base font-semibold leading-none text-gray-800">
+                  How does NodeJS handle multiple requests at the same time?
                   </h2>
                 </div>
                 <button
                   onClick={() => setBox4(!box4)}
                   data-menu
-                  class="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
+                   className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
                 >
                   {box4 ? (
                     <svg
@@ -244,9 +261,9 @@ const Blog = () => {
                       <path
                         d="M1 5L5 1L9 5"
                         stroke="#4B5563"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                         strokeWidth="1.5"
+                         strokeLinecap="round"
+                         strokeLinejoin="round"
                       />
                     </svg>
                   ) : (
@@ -262,9 +279,9 @@ const Blog = () => {
                       <path
                         d="M1 1L5 5L9 1"
                         stroke="#4B5563"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                         strokeWidth="1.5"
+                         strokeLinecap="round"
+                         strokeLinejoin="round"
                       />
                     </svg>
                   )}
@@ -273,10 +290,8 @@ const Blog = () => {
               {box4 && (
                 <ul>
                   <li>
-                    <p class="text-base leading-normal text-gray-600 mt-4 lg:w-96">
-                      If you want to choose Pro or Business plan the you can use
-                      all payments. You can pay from Paypal, Payoneer, Master
-                      Card, Debit Card.
+                    <p  className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
+                    NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them.
                     </p>
                   </li>
                 </ul>
