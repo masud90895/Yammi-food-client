@@ -1,7 +1,6 @@
 import React from "react";
 
 const SingelFoodCard = ({ food }) => {
-  console.log(food);
   const { _id, name, image, ratings, price, detailers } = food;
   return (
     <div className=" relative lg:w-[70%] shadow-lg p-4 rounded-md">
