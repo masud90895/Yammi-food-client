@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
+import Loader from "../Components/Loader/Loader";
 import { AuthContext } from "../Firebase/AuthProvider";
-
 
 const PriveteRoutes = ({ children }) => {
   let location = useLocation();
@@ -10,7 +10,7 @@ const PriveteRoutes = ({ children }) => {
   if (loading) {
     return (
       <div className="w-full mx-auto">
-        <h1>Loading.....</h1>
+        <Loader />
       </div>
     );
   }
