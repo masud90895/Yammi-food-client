@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
@@ -32,6 +32,9 @@ const Register = () => {
       })
       .catch((err) => console.error(err));
   };
+  useEffect(()=>{
+    document.title = "Register";
+  },[])
 
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto  bg-gray-900  text-gray-100">

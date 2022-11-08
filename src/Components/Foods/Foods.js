@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import FoodServicesCard from "./FoodServicesCard";
 
 const Foods = () => {
-    const [foods,setfoods]=useState([])
+  const [foods, setfoods] = useState([]);
+  const localtion = useLocation();
 
-    useEffect(() => {
-        fetch("http://localhost:5000/foods")
-          .then((res) => res.json())
-          .then((result) => {
-            if (result.success) {
-                setfoods(result.data);
-            }
-          });
-      }, []);
+  useEffect(() => {
+    document.title = "FoodService";
+    fetch("http://localhost:5000/foods")
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.success) {
+          setfoods(result.data);
+        }
+      });
+  }, []);
 
   return (
     <div className=" 2xl:container 2xl:mx-auto ">
@@ -67,10 +70,9 @@ const Foods = () => {
 
         <div className=" grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
           {/* food card section  */}
-          {
-            foods?.map(food=> <FoodServicesCard key={food._id} food={food}/>)
-          }
-          
+          {foods?.map((food) => (
+            <FoodServicesCard key={food._id} food={food} />
+          ))}
         </div>
       </div>
     </div>

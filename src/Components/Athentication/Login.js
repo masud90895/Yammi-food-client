@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
@@ -33,6 +33,9 @@ const Login = () => {
       .catch((err) => console.error(err));
   };
 
+  useEffect(()=>{
+    document.title = "Login";
+  },[])
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto  bg-gray-900  text-gray-100">
       <h1 className="text-2xl font-bold text-center">Login</h1>

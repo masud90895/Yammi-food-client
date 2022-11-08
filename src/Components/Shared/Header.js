@@ -161,9 +161,9 @@ const Header = () => {
               </Link>
               <button
                 onClick={logOutUser}
-                className="inline-block rounded-full bg-yellow-500   p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
+                className="inline-block rounded bg-yellow-500   p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
               >
-                <span className="block rounded-full bg-white px-4 py-2 font-bold hover:bg-transparent">
+                <span className="block rounded bg-white px-2 py-2 hover:bg-transparent">
                   Log Out
                 </span>
               </button>

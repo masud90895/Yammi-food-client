@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Blog = () => {
   const [box1, setBox1] = useState(false);
   const [box2, setBox2] = useState(false);
   const [box3, setBox3] = useState(false);
   const [box4, setBox4] = useState(false);
+  useEffect(()=>{
+    document.title = "Blog";
+  },[])
   return (
     <div>
       <div>
@@ -14,15 +17,14 @@ const Blog = () => {
       </div>
       <div>
         <img
-          src="https://i.ibb.co/DQ4FZhL/pattern-bg.png"
+          src="https://i.ibb.co/kJXFDw3/Curve-Yellow-Background-For-Free.jpg"
           alt="blue pattern background"
            className="absolute w-full h-64 md:h-96 object-center object-fit z-0"
         />
         <div  className="relative flex flex-col items-center justify-center sm:px-0 px-6 z-20 pb-32">
           <div  className="md:py-36 py-20">
             <h1
-              role="heading"
-               className="xl:text-6xl md:text-5xl text-xl font-bold leading-10 text-white"
+               className="xl:text-6xl md:text-5xl text-xl font-bold leading-10 text-Black"
             >
               Frequently asked questions
             </h1>

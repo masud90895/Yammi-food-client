@@ -11,6 +11,7 @@ const FoodDetailes = () => {
 
     // maybe error
   useEffect(() => {
+    document.title = "FoodReview";
     fetch(`http://localhost:5000/review?name=${foodData?.data?.name}`, {
       headers: {
         "content-type": "application/json",
@@ -26,7 +27,7 @@ const FoodDetailes = () => {
   console.log(reviewData);
     return (
         <div>
-            <FoodServiceDetailes foodData={foodData}/>
+            <FoodServiceDetailes reviewData={reviewData} foodData={foodData}/>
             <FoodReview reviewData={reviewData}/>
             <ReviewForm foodData={foodData} setReload={setReload} reload={reload}/>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SingelFoodCard = ({ food }) => {
   const { _id, name, image, ratings, price, detailers } = food;
@@ -12,9 +13,11 @@ const SingelFoodCard = ({ food }) => {
           alt="A girl Posing Img"
         />
         <div className=" absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-          <button className=" bg-transparent font-medium text-base leading-4 border-2 border-yellow-500 py-3 w-full mt-2 text-white">
-            View Detailers
-          </button>
+          <Link to={`../foodservice/${_id}`}>
+            <button className=" bg-transparent font-medium text-base leading-4 border-2 border-yellow-500 py-3 w-full mt-2 text-white">
+              View Detailers
+            </button>
+          </Link>
         </div>
       </div>
       <p className=" font-normal text-xl leading-5 text-gray-800 md:mt-6 mt-4">
@@ -26,9 +29,11 @@ const SingelFoodCard = ({ food }) => {
       <p className=" font-normal text-base leading-4 text-gray-600 mt-4">
         rating: <strong>{ratings}</strong> star
       </p>
-      <button className=" bg-transparent font-medium text-base leading-4 border-2 border-yellow-500  py-3 w-full mt-4 text-black rounded-md hover:bg-yellow-500 hover:text-black">
-        View Detailers
-      </button>
+      <Link to={`../foodservice/${_id}`}>
+        <button className=" bg-transparent font-medium text-base leading-4 border-2 border-yellow-500  py-3 w-full mt-4 text-black rounded-md hover:bg-yellow-500 hover:text-black">
+          View Detailers
+        </button>
+      </Link>
     </div>
   );
 };

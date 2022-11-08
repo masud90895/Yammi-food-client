@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FoodCard from "./FoodCard";
 
 const Home = () => {
+  useEffect(()=>{
+    document.title = "Yummi-Homemade";
+  },[])
   return (
     <div>
       {/* banner  */}
@@ -28,12 +31,12 @@ const Home = () => {
           <h3 className="text-xl">Incredibly Tasty Bangladeshi Dish</h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 md:px-[15%] px-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:px-[15%] px-3 gap-8 shadow-md">
           <div>
             <h1 className="text-3xl text-red-600 font-bold mb-10 font-serif">
               How to Make Shorshe Ilish?
             </h1>
-            <h1 className="text-xl flex flex-col gap-3">
+            <h1 className="text-xl flex flex-col gap-3 font-serif">
               <p>১। 750 gm. Hilsa fish (cut into 6-7 pieces)</p>
               <p>২। 1/2 teaspoon turmeric powder</p>
               <p> ৩। 1/2 tablespoon black mustard seeds</p>
@@ -60,7 +63,7 @@ const Home = () => {
             <h1 className="text-3xl text-red-600 font-bold mb-6 font-serif">
               Process
             </h1>
-            <p>
+            <p className="font-serif text-gray-800">
               Soak the mustard seeds in warm water for at least 1 hour,
               preferably 2. Strain and make a paste with 1/4th teaspoon salt and
               1 large green chilli. The paste should not be runny, so its ideal
@@ -88,7 +91,7 @@ const Home = () => {
             Homemade food gives people ACCESS to variety
             </h2>
 
-            <p className="hidden max-w-md text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed">
+            <p className=" max-w-md  text-white/90 md:mt-6 md:text-lg md:leading-relaxed">
             You don’t have to live in a big city to be able to find good ethnic food at your disposal. The YouFeed app, the first home-cooking app of its kind to launch in the state of Wyoming, allows users to find talented, vetted home cooks in their local proximity and order meals from them! 
             </p>
           </div>

@@ -1,12 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, Fragment } from "react";
 import { AuthContext } from "../../Firebase/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import { Dialog, Transition } from "@headlessui/react";
 
 const MyReview = () => {
   const [reviewData, setReviewData] = useState([]);
   const [reload, setReload] = useState(false);
+  const [ediedData, setEdiedData] = useState("");
   const { user } = useContext(AuthContext);
-
+  console.log(ediedData);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -31,8 +34,16 @@ const MyReview = () => {
     });
   };
 
+const handleEdied=(e)=>{
+  console.log(e.target.edied.value);
+}
+
+
+
+
   // maybe error
   useEffect(() => {
+    document.title = "My Reviews";
     if (user?.email) {
       fetch(`http://localhost:5000/myReview?email=${user?.email}`, {
         headers: {
@@ -47,7 +58,6 @@ const MyReview = () => {
         });
     }
   }, [reload, user?.email]);
-  console.log(reviewData);
   return (
     <>
       <div className="w-full sm:px-6">
@@ -57,11 +67,11 @@ const MyReview = () => {
               Reviews
             </p>
             <div>
-              <button className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
-                <p className="text-sm font-medium leading-none text-white">
+              <Link to="../foodservice">
+                <button className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 text-black border-2 hover:bg-yellow-500 border-yellow-500 rounded">
                   New Reviews
-                </p>
-              </button>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -108,10 +118,43 @@ const MyReview = () => {
                   </td>
                   <td className="pl-20">
                     <div className="font-medium">
-                      <button>Edit</button>/{" "}
+                      <label
+                        onClick={() => setEdiedData(data?.review)}
+                        htmlFor="my-modal-6"
+                      >
+                        Edit
+                      </label>
+                      {/* <button >Edit</button> */}/{" "}
                       <button onClick={() => handleDelete(data?._id)}>
                         Delete
                       </button>
+                    </div>
+                    <input
+                      type="checkbox"
+                      id="my-modal-6"
+                      className="modal-toggle"
+                    />
+                    <div className="modal modal-bottom sm:modal-middle">
+                      <div onSubmit={handleEdied} className="modal-box">
+                        <h3 className="font-bold text-lg">
+                          Modify Review
+                        </h3>
+                        {/*  <p className="py-4">
+                You've been selected for a chance to get one year of
+                subscription to use Wikipedia for free!
+              </p> */}
+                        <input
+                          type="text"
+                          className="py-4 border-2 border-yellow-500 rounded-md w-3/4 mx-auto"
+                          name="edied"
+                          defaultValue={ediedData}
+                        />
+                        <div className="modal-action">
+                          <label type='submit' htmlFor="my-modal-6" className="btn">
+                            Yay!
+                          </label>
+                        </div>
+                      </div>
                     </div>
                   </td>
                 </tr>
