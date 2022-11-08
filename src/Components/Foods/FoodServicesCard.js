@@ -24,7 +24,7 @@ const FoodServicesCard = ({ food }) => {
         ratings: <strong>{ratings}</strong> Star
       </p>
       <p className=" font-normal text-normal leading-4 text-gray-600 mt-4">
-        {detailers.length > 100 ? detailers.slice(0, 100) + "..." : detailers}
+        {detailers?.length > 100 ? detailers.slice(0, 100) + "..." : detailers}
       </p>
 
       <Link to={`../foodservice/${_id}`}>

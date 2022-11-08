@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../../Firebase/AuthProvider";
 import toast from "react-hot-toast";
-import { Navigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ReviewForm = ({ foodData, reload, setReload }) => {
   const { user } = useContext(AuthContext);
-  let location = useLocation();
   const handleReview = (e) => {
     e.preventDefault();
     const review = {
@@ -31,10 +30,6 @@ const ReviewForm = ({ foodData, reload, setReload }) => {
         e.target.reset();
       });
   };
-  /* const handleReviewLogin = () => {
-    console.log(location.pathname);
-    <Navigate to="/login" state={{ from: location.pathname }} replace />;
-  }; */
 
   return (
     <>
@@ -196,12 +191,11 @@ const ReviewForm = ({ foodData, reload, setReload }) => {
           <h1 className="text-5xl text-center py-4 text-red-600 font-serif">
             Please Login To Review Our Food
           </h1>
-          <button
-            /* onClick={handleReviewLogin} */
-            className="border-2 border-red-600 w-[10%] py-2 rounded-lg hover:bg-red-600 hover:text-white font-bold"
-          >
-            Login
-          </button>
+          <Link to="../login">
+            <button className="border-2 border-red-600  py-2 px-5 rounded-lg hover:bg-red-600 hover:text-white font-bold">
+              Login
+            </button>
+          </Link>
         </div>
       )}
     </>

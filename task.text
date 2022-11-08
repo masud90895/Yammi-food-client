@@ -1,25 +1,10 @@
 
 
 Main Requirements
-
-10=>The "My reviews" page will be a private route and show only the reviews that the current user added either in a table or in cards with relevant information like - service name, review etc. There will be two buttons/icons - edit review(details in the bonus part) and delete review with each review. On clicking the delete button/icon, you have to delete the review, and it won't show up on that service page anymore. When the delete is successful, a toast/modal with a message will pop up to inform the user. If the user doesn't add any review, the page will show 'No reviews were added' at the middle of the page
-
-11=>On the "Add service" page(also a private route), you can add a service and that service will be shown on the home page. When the service is added successfully, a toast/modal with a message will pop up to inform the user.
-
-
-
 Bonus Requirements
-Your Readme file for the client-side repo should have details about your project's features and functionalities in bullet points(at least five bullet points) and your live link. Adding a meaningful readme file for the server-side repo is optional.
+1=>Your Readme file for the client-side repo should have details about your project's features and functionalities in bullet points(at least five bullet points) and your live link. Adding a meaningful readme file for the server-side repo is optional.
 
-At least 15 meaningful GitHub commits for the client-side and 8 meaningful commits for the server-side repository.
 
-Your code should be clean and organized. Comments should be added where necessary
-
-The title of the page will change with the page you visit. It should not be the same for every route
-
-Add a meaningful favicon
-
-Add a spinner on the services page, and the login and register page. If data is loading, a spinner will be displayed.
 
 use the Environment Environment variable on both the client (firebase config) and server-side (mongodb credentials, Access token secret). Use .gitignore file on the server side.
 
