@@ -17,8 +17,20 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
-        navigate(from, { replace: true });
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ email: user.email }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // set localStorage
+            localStorage.setItem("token", data.token);
+            navigate(from, { replace: true });
+          });
       })
       .catch((err) => console.error(err));
   };
@@ -33,9 +45,9 @@ const Login = () => {
       .catch((err) => console.error(err));
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     document.title = "Login";
-  },[])
+  }, []);
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto  bg-gray-900  text-gray-100">
       <h1 className="text-2xl font-bold text-center">Login</h1>

@@ -45,6 +45,7 @@ const MyReview = () => {
       fetch(`http://localhost:5000/myReview?email=${user?.email}`, {
         headers: {
           "content-type": "application/json",
+          authorization:`Bearer ${localStorage.getItem("token")}`
         },
       })
         .then((res) => res.json())
