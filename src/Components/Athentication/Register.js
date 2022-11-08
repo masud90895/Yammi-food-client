@@ -2,9 +2,9 @@ import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
-
 const Register = () => {
-  const { createUserEmailPass, updateName, googleLogin } =useContext(AuthContext);
+  const { createUserEmailPass, updateName, googleLogin } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
@@ -18,7 +18,21 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ email: user.email }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // set localStorage
+            localStorage.setItem("token", data.token);
+
+            navigate("/");
+          });
       })
       .then((err) => console.error(err));
   };
@@ -32,9 +46,9 @@ const Register = () => {
       })
       .catch((err) => console.error(err));
   };
-  useEffect(()=>{
+  useEffect(() => {
     document.title = "Register";
-  },[])
+  }, []);
 
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto  bg-gray-900  text-gray-100">

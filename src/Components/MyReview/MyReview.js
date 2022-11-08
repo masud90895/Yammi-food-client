@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState, Fragment } from "react";
 import { AuthContext } from "../../Firebase/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-import { Dialog, Transition } from "@headlessui/react";
 
 const MyReview = () => {
   const [reviewData, setReviewData] = useState([]);
@@ -34,10 +33,6 @@ const MyReview = () => {
     });
   };
 
-  const handleEdied = (e) => {
-    console.log(e.target.edied.value);
-  };
-
   // maybe error
   useEffect(() => {
     document.title = "My Reviews";
@@ -45,7 +40,7 @@ const MyReview = () => {
       fetch(`http://localhost:5000/myReview?email=${user?.email}`, {
         headers: {
           "content-type": "application/json",
-          authorization:`Bearer ${localStorage.getItem("token")}`
+          authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       })
         .then((res) => res.json())
@@ -118,45 +113,17 @@ const MyReview = () => {
                       </td>
                       <td className="pl-20">
                         <div className="font-medium">
-                          <label
-                            onClick={() => setEdiedData(data?.review)}
-                            htmlFor="my-modal-6"
-                          >
+                          <Link to={`../myReview/${data?._id}`}>
+                          <button  className="btn cursor-pointer hover:text-yellow-500 hover:border-b hover:border-yellow-500">
                             Edit
-                          </label>
-                          {/* <button >Edit</button> */}/{" "}
-                          <button className="hover:border-b hover:border-yellow-500 hover:text-yellow-500" onClick={() => handleDelete(data?._id)}>
+                          </button>
+                          </Link>{" "}
+                          <button
+                            className="btn hover:border-b hover:border-yellow-500 hover:text-yellow-500"
+                            onClick={() => handleDelete(data?._id)}
+                          >
                             Delete
                           </button>
-                        </div>
-                        <input
-                          type="checkbox"
-                          id="my-modal-6"
-                          className="modal-toggle"
-                        />
-                        <div className="modal modal-bottom sm:modal-middle">
-                          <div onSubmit={handleEdied} className="modal-box">
-                            <h3 className="font-bold text-lg">Modify Review</h3>
-                            {/*  <p className="py-4">
-                  You've been selected for a chance to get one year of
-                  subscription to use Wikipedia for free!
-                </p> */}
-                            <input
-                              type="text"
-                              className="py-4 border-2 border-yellow-500 rounded-md w-3/4 mx-auto"
-                              name="edied"
-                              defaultValue={ediedData}
-                            />
-                            <div className="modal-action">
-                              <label
-                                type="submit"
-                                htmlFor="my-modal-6"
-                                className="btn"
-                              >
-                                Yay!
-                              </label>
-                            </div>
-                          </div>
                         </div>
                       </td>
                     </tr>
@@ -164,7 +131,9 @@ const MyReview = () => {
                 </>
               ) : (
                 <tr className="w-full">
-                  <td className="text-2xl w-full font-bold text-center">No reviews were added</td>
+                  <td className="text-2xl w-full font-bold text-center">
+                    No reviews were added
+                  </td>
                 </tr>
               )}
             </tbody>

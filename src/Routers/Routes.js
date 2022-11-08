@@ -10,6 +10,7 @@ import Blog from "../Components/Blog/Blog";
 import MyReview from "../Components/MyReview/MyReview";
 import PriveteRoutes from "./PrivetRoutes";
 import AddSarvice from "../Components/AddSarvice/AddSarvice";
+import EditReview from "../Components/MyReview/EditReview";
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +63,17 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) => {
           return fetch(`http://localhost:5000/foods/${params.id}`);
+        },
+      },
+      {
+        path: "myReview/:id",
+        element: (
+          
+            <EditReview />
+          
+        ),
+        loader: ({ params }) => {
+          return fetch(`http://localhost:5000/myReview/${params.id}`);
         },
       },
     ],
