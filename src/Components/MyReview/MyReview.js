@@ -20,7 +20,7 @@ const MyReview = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/review${id}`, {
+        fetch(`https://assinment11.vercel.app/review${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -32,12 +32,12 @@ const MyReview = () => {
       }
     });
   };
-
+console.log(reviewData);
   // maybe error
   useEffect(() => {
     document.title = "My Reviews";
     if (user?.email) {
-      fetch(`http://localhost:5000/myReview?email=${user?.email}`, {
+      fetch(`https://assinment11.vercel.app/myReview?email=${user?.email}`, {
         headers: {
           "content-type": "application/json",
           authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -108,15 +108,15 @@ const MyReview = () => {
                           {data?.category}
                         </p>
                       </td>
-                      <td className="pl-12">
+                      <td className="pl-12 ">
                         <p className="font-medium">{data?.review}</p>
                       </td>
                       <td className="pl-20">
                         <div className="font-medium">
                           <Link to={`../myReview/${data?._id}`}>
-                          <button  className="btn cursor-pointer hover:text-yellow-500 hover:border-b hover:border-yellow-500">
-                            Edit
-                          </button>
+                            <button className="btn cursor-pointer hover:text-yellow-500 hover:border-b hover:border-yellow-500">
+                              Edit
+                            </button>
                           </Link>{" "}
                           <button
                             className="btn hover:border-b hover:border-yellow-500 hover:text-yellow-500"

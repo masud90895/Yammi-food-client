@@ -17,7 +17,7 @@ const EditReview = () => {
       review: data,
       userName,
     };
-    fetch(`http://localhost:5000/editReview/${_id}`, {
+    fetch(`https://assinment11.vercel.app/editReview/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

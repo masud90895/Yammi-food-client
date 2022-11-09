@@ -8,11 +8,11 @@ const FoodDetailes = () => {
     const [reviewData, setReviewData] = useState([]);
     const [reload,setReload]=useState(false)
     const foodData= useLoaderData()
-
+   
     // maybe error
   useEffect(() => {
     document.title = "FoodReview";
-    fetch(`http://localhost:5000/review?name=${foodData?.data?.name}`, {
+    fetch(`https://assinment11.vercel.app/review?name=${foodData?.data?.name}`, {
       headers: {
         "content-type": "application/json",
       },
@@ -24,7 +24,7 @@ const FoodDetailes = () => {
         }
       });
   }, [foodData?.data?.name,reload]);
-  console.log(reviewData);
+  
     return (
         <div>
             <FoodServiceDetailes reviewData={reviewData} foodData={foodData}/>

@@ -9,7 +9,7 @@ const PriveteRoutes = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="w-full mx-auto">
+      <div className="w-full mx-auto my-[10%]">
         <Loader />
       </div>
     );

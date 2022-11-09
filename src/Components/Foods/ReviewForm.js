@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Firebase/AuthProvider";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import TimePicker from "react-time-picker";
 
 const ReviewForm = ({ foodData, reload, setReload }) => {
   const { user } = useContext(AuthContext);
+  // const [value, onChange] = useState(new Date());
+  // console.log("date",value);
   const handleReview = (e) => {
     e.preventDefault();
     const review = {
@@ -13,9 +16,10 @@ const ReviewForm = ({ foodData, reload, setReload }) => {
       email: user?.email,
       image: user?.photoURL,
       review: e.target.review.value,
+      time: new Date().toLocaleString(),
     };
 
-    fetch("http://localhost:5000/review", {
+    fetch("https://assinment11.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -173,12 +177,10 @@ const ReviewForm = ({ foodData, reload, setReload }) => {
                     <p className="mt-3 text-xs leading-[15px] text-gray-600 px-7">
                       Enter Your Food Experience for better understanding
                     </p>
-
-                    <hr className="h-[1px] bg-gray-100 my-14" />
-                    <div className="flex flex-col flex-wrap items-center justify-center w-full px-7 lg:flex-row lg:justify-end md:justify-end gap-x-4 gap-y-4">
-                      <button className="border-2 border-yellow-500 rounded hover:bg-yellow-500 transform duration-300 ease-in-out text-sm font-medium px-6 py-4 text-black lg:max-w-[144px] w-full ">
-                        Review
-                      </button>
+                    <div className="text-center">
+                    <button className="border-2  border-yellow-500 rounded hover:bg-yellow-500 transform duration-300 ease-in-out text-sm font-medium px-6 py-4 text-black lg:max-w-[144px] w-full ">
+                      Review
+                    </button>
                     </div>
                   </form>
                 </div>

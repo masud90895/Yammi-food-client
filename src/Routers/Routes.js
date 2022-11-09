@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
           
         ),
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/foods/${params.id}`);
+          return fetch(`https://assinment11.vercel.app/foods/${params.id}`);
         },
       },
       {
@@ -73,7 +73,7 @@ export const router = createBrowserRouter([
           
         ),
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/myReview/${params.id}`);
+          return fetch(`https://assinment11.vercel.app/myReview/${params.id}`);
         },
       },
     ],

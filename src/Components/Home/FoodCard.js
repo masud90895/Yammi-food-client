@@ -6,7 +6,7 @@ const FoodCard = () => {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/")
+    fetch("https://assinment11.vercel.app/")
       .then((res) => res.json())
       .then((result) => {
         if (result.success) {

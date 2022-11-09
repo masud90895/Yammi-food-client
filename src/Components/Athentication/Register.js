@@ -18,7 +18,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://assinment11.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",

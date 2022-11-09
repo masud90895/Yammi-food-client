@@ -8,7 +8,7 @@ const Foods = () => {
 
   useEffect(() => {
     document.title = "FoodService";
-    fetch("http://localhost:5000/foods")
+    fetch("https://assinment11.vercel.app/foods")
       .then((res) => res.json())
       .then((result) => {
         if (result.success) {
