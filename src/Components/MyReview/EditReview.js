@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import toast from "react-hot-toast";
-import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
+import {  useLoaderData, useNavigate } from "react-router-dom";
 
 const EditReview = () => {
   const reviewsData = useLoaderData();
   const { _id, email, review, category, image, userName } = reviewsData?.data;
   const navigate = useNavigate();
-
+  console.log(reviewsData?.data);
   const handleReview = (e) => {
     e.preventDefault();
     const data = e.target.reviewData.value;

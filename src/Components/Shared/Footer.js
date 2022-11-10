@@ -3,10 +3,14 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="mx-auto container xl:px-20 lg:px-12 sm:px-6 px-4 py-12">
-        <hr className="mb-4"/>
+      <hr className="mb-4" />
       <div className="flex flex-col items-center justify-center">
         <div>
-          <img className="w-[111px]" src="https://i.ibb.co/VJ05L3B/logo1.png" alt="" />
+          <img
+            className="w-[111px]"
+            src="https://i.ibb.co/VJ05L3B/logo1.png"
+            alt=""
+          />
         </div>
         <div className="flex flex-wrap sm:gap-10 gap-8 items-center justify-center mt-8">
           <p className="hover:text-gray-500 text-base cursor-pointer leading-4 text-gray-800">
@@ -85,7 +89,7 @@ const Footer = () => {
           </p>
           <div className="border-l border-gray-800 pl-2 ml-2">
             <p className="text-base leading-4 text-gray-800">
-              Inc. All righys reserved
+              &copy; Inc. All rights reserved
             </p>
           </div>
         </div>

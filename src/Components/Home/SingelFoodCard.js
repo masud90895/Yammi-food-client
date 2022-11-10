@@ -28,7 +28,7 @@ const SingelFoodCard = ({ food }) => {
       </p>
       <Link to={`../foodservice/${_id}`}>
         <button className=" bg-transparent font-medium text-base leading-4 border-2 border-yellow-500  py-3 w-full mt-4 text-black rounded-md hover:bg-yellow-500 hover:text-black">
-          View Detailers
+          View details
         </button>
       </Link>
     </div>

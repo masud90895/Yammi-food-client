@@ -1,14 +1,23 @@
 import React, { useEffect } from "react";
 import FoodCard from "./FoodCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
-  useEffect(()=>{
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
     document.title = "Yummi-Homemade";
-  },[])
+  }, []);
   return (
     <div>
       {/* banner  */}
-      <div className="bg-yellow-50 ">
+      <div
+        data-aos="zoom-out-right"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
+        className="bg-yellow-50 "
+      >
         <img
           className="md:w-[75%] p-6 mx-auto lg:mt-20 md:mt-16 mt-10"
           src="https://i.ibb.co/VvL0QPY/Yummi.png"
@@ -19,11 +28,17 @@ const Home = () => {
         </h1>
       </div>
       {/* food section  */}
-      <div>
+      <div
+        data-aos="fade-up"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
+      >
         <FoodCard />
       </div>
       {/* recepy section  */}
-      <div className="mb-16">
+      <div data-aos="zoom-out-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000" className="mb-16">
         <div className="text-center py-10">
           <h1 className="text-3xl font-bold font-serif mb-2">
             Customer Favorite Dish
@@ -84,15 +99,21 @@ const Home = () => {
       </div>
 
       {/* food review       */}
-      <section  className="overflow-hidden  md:mx-[13%] bg-[url(https://i.ibb.co/JmFtVRv/image-compressed.jpg)] rounded-lg bg-cover bg-center bg-no-repeat">
+      <section data-aos="fade-zoom-in"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000" className="overflow-hidden  md:mx-[13%] bg-[url(https://i.ibb.co/JmFtVRv/image-compressed.jpg)] rounded-lg bg-cover bg-center bg-no-repeat">
         <div className="bg-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
           <div className="max-w-lg text-center sm:text-left">
             <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl">
-            Homemade food gives people ACCESS to variety
+              Homemade food gives people ACCESS to variety
             </h2>
 
             <p className=" max-w-md  text-white/90 md:mt-6 md:text-lg md:leading-relaxed">
-            You don’t have to live in a big city to be able to find good ethnic food at your disposal. The YouFeed app, the first home-cooking app of its kind to launch in the state of Wyoming, allows users to find talented, vetted home cooks in their local proximity and order meals from them! 
+              You don’t have to live in a big city to be able to find good
+              ethnic food at your disposal. The YouFeed app, the first
+              home-cooking app of its kind to launch in the state of Wyoming,
+              allows users to find talented, vetted home cooks in their local
+              proximity and order meals from them!
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ import "react-photo-view/dist/react-photo-view.css";
 const FoodServicesCard = ({ food }) => {
   const { _id, name, image, ratings, price, detailers } = food;
   return (
-    <div className=" relative lg:w-[75%] shadow-lg p-3 rounded-lg">
+    <div data-aos="zoom-in-right" className=" relative lg:w-[75%] shadow-lg p-3 rounded-lg">
       <div className=" relative group">
         <PhotoProvider>
           <PhotoView src={image}>
