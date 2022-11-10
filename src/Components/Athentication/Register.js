@@ -36,7 +36,8 @@ const Register = () => {
             updateUserName();
             navigate("/");
           });
-      }).catch((err) => console.error(err));
+      })
+      .catch((err) => console.error(err));
 
     const updateUserName = () => {
       updateName(name, photo)
@@ -62,7 +63,7 @@ const Register = () => {
       .catch((err) => console.error(err));
   };
   useEffect(() => {
-    document.title = "Register";
+    document.title = "Register - Yummi-Homemade";
   }, []);
 
   return (

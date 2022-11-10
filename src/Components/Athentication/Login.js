@@ -58,7 +58,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    document.title = "Login";
+    document.title = "Login - Yummi-Homemade";
   }, []);
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto  bg-gray-900  text-gray-100">

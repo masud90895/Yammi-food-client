@@ -35,7 +35,7 @@ const MyReview = () => {
 console.log(reviewData);
   // maybe error
   useEffect(() => {
-    document.title = "My Reviews";
+    document.title = "My Reviews - Yummi-Homemade";
     if (user?.email) {
       fetch(`https://assinment11.vercel.app/myReview?email=${user?.email}`, {
         headers: {

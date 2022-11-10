@@ -5,9 +5,9 @@ const Blog = () => {
   const [box2, setBox2] = useState(false);
   const [box3, setBox3] = useState(false);
   const [box4, setBox4] = useState(false);
-  useEffect(()=>{
-    document.title = "Blog";
-  },[])
+  useEffect(() => {
+    document.title = "Blog - Yummi-Homemade";
+  }, []);
   return (
     <div>
       <div>
@@ -19,27 +19,28 @@ const Blog = () => {
         <img
           src="https://i.ibb.co/kJXFDw3/Curve-Yellow-Background-For-Free.jpg"
           alt="blue pattern background"
-           className="absolute w-full h-64 md:h-96 object-center object-fit z-0"
+          className="absolute w-full h-64 md:h-96 object-center object-fit z-0"
         />
-        <div  className="relative flex flex-col items-center justify-center sm:px-0 px-6 z-20 pb-32">
-          <div  className="md:py-36 py-20">
-            <h1
-               className="xl:text-6xl md:text-5xl text-xl font-bold leading-10 text-Black"
-            >
+        <div className="relative flex flex-col items-center justify-center sm:px-0 px-6 z-20 pb-32">
+          <div className="md:py-36 py-20">
+            <h1 className="xl:text-6xl md:text-5xl text-xl font-bold leading-10 text-Black">
               Frequently asked questions
             </h1>
           </div>
-          <div  className="lg:w-1/2 md:w-8/12 sm:w-9/12 w-full">
-            <div  className="bg-white shadow rounded p-8">
-              <div  className="flex items-center justify-between">
+          <div className="lg:w-1/2 md:w-8/12 sm:w-9/12 w-full">
+            <div
+              onClick={() => setBox1(!box1)}
+              className="bg-white shadow rounded p-8"
+            >
+              <div className="flex items-center justify-between">
                 <div>
-                  <h2  className="text-base font-semibold leading-none text-gray-800">
+                  <h2 className="text-base font-semibold leading-none text-gray-800">
                     Difference between SQL and NoSQL?
                   </h2>
                 </div>
                 <button
                   onClick={() => setBox1(!box1)}
-                   className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
+                  className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
                 >
                   {box1 ? (
                     <svg
@@ -54,9 +55,9 @@ const Blog = () => {
                       <path
                         d="M1 5L5 1L9 5"
                         stroke="#4B5563"
-                         strokeWidth="1.5"
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   ) : (
@@ -72,9 +73,9 @@ const Blog = () => {
                       <path
                         d="M1 1L5 5L9 1"
                         stroke="#4B5563"
-                         strokeWidth="1.5"
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   )}
@@ -82,9 +83,9 @@ const Blog = () => {
               </div>
 
               {box1 && (
-                <ul  className="">
+                <ul className="">
                   <li>
-                    <p  className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
+                    <p className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
                       SQL is the programming language used to interface with
                       relational databases. (Relational databases model data as
                       records in rows and tables with logical links between
@@ -95,10 +96,15 @@ const Blog = () => {
                 </ul>
               )}
             </div>
-            <div  className="bg-white shadow rounded p-8 mt-8">
-              <div  className="flex items-center justify-between">
+            <div
+              onClick={() => {
+                setBox2(!box2);
+              }}
+              className="bg-white shadow rounded p-8 mt-8"
+            >
+              <div className="flex items-center justify-between">
                 <div>
-                  <h2  className="text-base font-semibold leading-none text-gray-800">
+                  <h2 className="text-base font-semibold leading-none text-gray-800">
                     What is JWT, and how does it work?
                   </h2>
                 </div>
@@ -107,7 +113,7 @@ const Blog = () => {
                     setBox2(!box2);
                   }}
                   data-menu
-                   className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
+                  className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
                 >
                   {box2 ? (
                     <svg
@@ -122,9 +128,9 @@ const Blog = () => {
                       <path
                         d="M1 5L5 1L9 5"
                         stroke="#4B5563"
-                         strokeWidth="1.5"
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   ) : (
@@ -140,9 +146,9 @@ const Blog = () => {
                       <path
                         d="M1 1L5 5L9 1"
                         stroke="#4B5563"
-                         strokeWidth="1.5"
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   )}
@@ -151,7 +157,7 @@ const Blog = () => {
               {box2 && (
                 <ul>
                   <li>
-                    <p  className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
+                    <p className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
                       JSON Web Token (JWT) is an open standard (RFC 7519) that
                       defines a compact and self-contained way for securely
                       transmitting information between parties as a JSON object.
@@ -168,10 +174,15 @@ const Blog = () => {
                 </ul>
               )}
             </div>
-            <div  className="bg-white shadow rounded p-8 mt-8">
-              <div  className="flex items-center justify-between">
+            <div
+              onClick={() => {
+                setBox3(!box3);
+              }}
+              className="bg-white shadow rounded p-8 mt-8"
+            >
+              <div className="flex items-center justify-between">
                 <div>
-                  <h2  className="text-base font-semibold leading-none text-gray-800">
+                  <h2 className="text-base font-semibold leading-none text-gray-800">
                     What is the difference between javascript and NodeJS?
                   </h2>
                 </div>
@@ -180,7 +191,7 @@ const Blog = () => {
                     setBox3(!box3);
                   }}
                   data-menu
-                   className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
+                  className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
                 >
                   {box3 ? (
                     <svg
@@ -195,9 +206,9 @@ const Blog = () => {
                       <path
                         d="M1 5L5 1L9 5"
                         stroke="#4B5563"
-                         strokeWidth="1.5"
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   ) : (
@@ -213,9 +224,9 @@ const Blog = () => {
                       <path
                         d="M1 1L5 5L9 1"
                         stroke="#4B5563"
-                         strokeWidth="1.5"
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   )}
@@ -224,7 +235,7 @@ const Blog = () => {
               {box3 && (
                 <ul>
                   <li>
-                    <p  className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
+                    <p className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
                       JavaScript is a simple programming language that can be
                       used with any browser that has the JavaScript Engine
                       installed. Node. js, on the other hand, is an interpreter
@@ -238,17 +249,20 @@ const Blog = () => {
                 </ul>
               )}
             </div>
-            <div  className="bg-white shadow rounded p-8 mt-8">
-              <div  className="flex items-center justify-between">
+            <div
+              onClick={() => setBox4(!box4)}
+              className="bg-white shadow rounded p-8 mt-8"
+            >
+              <div className="flex items-center justify-between">
                 <div>
-                  <h2  className="text-base font-semibold leading-none text-gray-800">
-                  How does NodeJS handle multiple requests at the same time?
+                  <h2 className="text-base font-semibold leading-none text-gray-800">
+                    How does NodeJS handle multiple requests at the same time?
                   </h2>
                 </div>
                 <button
                   onClick={() => setBox4(!box4)}
                   data-menu
-                   className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
+                  className="focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ring-offset-white cursor-pointer"
                 >
                   {box4 ? (
                     <svg
@@ -263,9 +277,9 @@ const Blog = () => {
                       <path
                         d="M1 5L5 1L9 5"
                         stroke="#4B5563"
-                         strokeWidth="1.5"
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   ) : (
@@ -281,9 +295,9 @@ const Blog = () => {
                       <path
                         d="M1 1L5 5L9 1"
                         stroke="#4B5563"
-                         strokeWidth="1.5"
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   )}
@@ -292,8 +306,12 @@ const Blog = () => {
               {box4 && (
                 <ul>
                   <li>
-                    <p  className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
-                    NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them.
+                    <p className="text-base leading-normal text-gray-600 mt-4 lg:w-[90%]">
+                      NodeJS receives multiple client requests and places them
+                      into EventQueue. NodeJS is built with the concept of
+                      event-driven architecture. NodeJS has its own EventLoop
+                      which is an infinite loop that receives requests and
+                      processes them.
                     </p>
                   </li>
                 </ul>

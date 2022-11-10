@@ -12,7 +12,7 @@ const Foods = () => {
     setLoading(true);
     AOS.init();
     AOS.refresh();
-    document.title = "FoodService";
+    document.title = "FoodService - Yummi-Homemade";
     fetch("https://assinment11.vercel.app/foods")
       .then((res) => res.json())
       .then((result) => {

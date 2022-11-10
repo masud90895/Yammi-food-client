@@ -4,7 +4,7 @@
 
 Hosted in firebase -> [Yummi-Homemade](https://assinment11-c5915.web.app/)
 
-## My Projects
+## My Projects Detail's
 
 - This site build based on home made food delivery. <br/>
 - To Build This Project I used React, React router, Tailwind, sweet alert,firebase,mongodb etc. <br/>

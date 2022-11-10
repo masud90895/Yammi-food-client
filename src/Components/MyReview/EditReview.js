@@ -57,8 +57,8 @@ const EditReview = () => {
                   <textarea
                     name="reviewData"
                     id=""
-                    cols="20"
-                    rows="10"
+                    cols="36"
+                    rows="11"
                     defaultValue={review}
                   ></textarea>
                 </div>
