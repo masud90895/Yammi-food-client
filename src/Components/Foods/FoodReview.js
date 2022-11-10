@@ -34,7 +34,7 @@ const FoodReview = ({ reviewData }) => {
                     <div>
                       {data?.image ? (
                         <img
-                          className="w-[60%] rounded-full bg-yellow-500"
+                          className="w-[60px] rounded-full bg-yellow-500"
                           src={data?.image}
                           alt=""
                         />

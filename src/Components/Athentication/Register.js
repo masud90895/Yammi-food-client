@@ -9,8 +9,11 @@ const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+    console.log(photo);
     if (password.length < 6) {
       return console.error("password must need 6 digit");
     }
@@ -30,11 +33,23 @@ const Register = () => {
             console.log(data);
             // set localStorage
             localStorage.setItem("token", data.token);
-
+            updateUserName();
             navigate("/");
           });
-      })
-      .then((err) => console.error(err));
+      }).catch((err) => console.error(err));
+
+    const updateUserName = () => {
+      updateName(name, photo)
+        .then(() => {
+          // Profile updated!
+          // ...
+        })
+        .catch((error) => {
+          // An error occurred
+          console.log(error.message);
+          // ...
+        });
+    };
   };
 
   const handleGoogleLogin = () => {
@@ -59,6 +74,32 @@ const Register = () => {
         action=""
         className="space-y-6 ng-untouched ng-pristine ng-valid"
       >
+        <div className="space-y-1 text-sm">
+          <label htmlFor="name" className="block  text-gray-400">
+            Full Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="name"
+            className="w-full px-4 py-3 rounded-md border border-gray-200  bg-gray-900  text-gray-100 focus:border-violet-400"
+            required
+          />
+        </div>
+        <div className="space-y-1 text-sm">
+          <label htmlFor="photo" className="block  text-gray-400">
+            photoURL
+          </label>
+          <input
+            type="text"
+            name="photo"
+            id="photo"
+            placeholder="photoURL "
+            className="w-full px-4 py-3 rounded-md border border-gray-200  bg-gray-900  text-gray-100 focus:border-violet-400"
+            required
+          />
+        </div>
         <div className="space-y-1 text-sm">
           <label htmlFor="email" className="block  text-gray-400">
             Email
