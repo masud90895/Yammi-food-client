@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
@@ -32,7 +33,10 @@ const Login = () => {
             navigate(from, { replace: true });
           });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err)
+        toast.error(err.message);
+      });
   };
 
   const handleGoogleLogin = () => {
@@ -54,7 +58,10 @@ const Login = () => {
             navigate(from, { replace: true });
           });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err)
+        toast.error(err.message);
+      });
   };
 
   useEffect(() => {

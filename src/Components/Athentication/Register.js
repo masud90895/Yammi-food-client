@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
@@ -15,7 +16,7 @@ const Register = () => {
     const password = form.password.value;
     console.log(photo);
     if (password.length < 6) {
-      return console.error("password must need 6 digit");
+      return toast.error("password must need 6 digit");
     }
     createUserEmailPass(email, password)
       .then((result) => {
@@ -37,7 +38,10 @@ const Register = () => {
             navigate("/");
           });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err)
+        toast.error(err.message);
+      });
 
     const updateUserName = () => {
       updateName(name, photo)
@@ -48,6 +52,7 @@ const Register = () => {
         .catch((error) => {
           // An error occurred
           console.log(error.message);
+          toast.error(error.message);
           // ...
         });
     };
@@ -60,7 +65,10 @@ const Register = () => {
         console.log(user);
         navigate("/");
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err)
+        toast.error(err.message);
+      });
   };
   useEffect(() => {
     document.title = "Register - Yummi-Homemade";
